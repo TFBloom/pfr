@@ -79,11 +79,11 @@ and if $\psi:G \to G/H$ is the natural projection then
 \uses{app-ent-pfr}
 Let $H\leq \mathbb{F}_2^d$ be a maximal subgroup such that
 \[\mathbb{H}(\psi(X))+\mathbb{H}(\psi(Y))> 44d[\psi(X);\psi(Y)]\]
+and there exists an integer $k\geq 0$ with
+\[\log \lvert H\rvert \leq \left(2-2^{2-k}\right)(\mathbb{H}(X)+\mathbb{H}(Y))\]
 and
-\[\log \lvert H\rvert \leq \left(2-2^{2-\lvert H\rvert}\right)(\mathbb{H}(X)+\mathbb{H}(Y))\]
-and
-\[\mathbb{H}(\psi(X))+\mathbb{H}(\psi(Y))\leq 2^{1-\lvert H\rvert}(\mathbb{H}(X)+\mathbb{H}(Y)).\]
-Note that this exists since $H=\{0\}$ is an example of such a subgroup or we are done with this choice of $H$.
+\[\mathbb{H}(\psi(X))+\mathbb{H}(\psi(Y))\leq 2^{1-k}(\mathbb{H}(X)+\mathbb{H}(Y)).\]
+Note that this exists since $H=\{0\}$ is an example of such a subgroup (with $k=1$) or we are done with this choice of $H$.
 
 We know that $G/H$ has the shape $\mathbb{F}_2^{d'}$ for some $d'$ [exactly how to see this/set up the hypotheses of Lemma \ref{app-ent-pfr} to make this an easy deduction I'll leave to those who know Lean better] and so by Lemma \ref{app-ent-pfr} there exists some non-trivial subgroup $H'\leq G/H$ such that
 \[\log \lvert H'\rvert < \mathbb{H}(\psi(X))+\mathbb{H}(\psi(Y))\]
@@ -92,10 +92,10 @@ and
 where $\psi':G/H\to (G/H)/H'$. By group isomorphism theorems we know that there exists some $H''$ with $H\leq H''\leq G$ such that $H'\cong H''/H$ and $\psi'(X)=\psi''(X)$ where $\psi'':G\to G/H''$ is the projection homomorphism.
 
 Since $H'$ is non-trivial we know that $H$ is a proper subgroup of $H''$. On the other hand we know that
-\[\log \lvert H''\rvert=\log \lvert H'\rvert+\log \lvert H\rvert< (2-2^{1-\lvert H\rvert})(\mathbb{H}(X)+\mathbb{H}(Y)).\]
+\[\log \lvert H''\rvert=\log \lvert H'\rvert+\log \lvert H\rvert< (2-2^{1-k})(\mathbb{H}(X)+\mathbb{H}(Y)).\]
 and
-\[\mathbb{H}(\psi''(X))+\mathbb{H}(\psi''(Y))< \frac{\mathbb{H}(\psi(X))+\mathbb{H}(\psi(Y))}{2}\leq 2^{1-\lvert H'\rvert}(\mathbb{H}(X)+\mathbb{H}(Y)).\]
-Therefore (using the maximality of $H$) it must be the first condition that fails, whence
+\[\mathbb{H}(\psi''(X))+\mathbb{H}(\psi''(Y))< \frac{\mathbb{H}(\psi(X))+\mathbb{H}(\psi(Y))}{2}\leq 2^{k}(\mathbb{H}(X)+\mathbb{H}(Y)).\]
+Therefore $H''$ satisfies the second and third conditions (with $k$ replaced by $k+1$) and so (using the maximality of $H$) it must be the first condition that fails, whence
 \[\mathbb{H}(\psi''(X))+\mathbb{H}(\psi''(Y))\leq 48d[\psi''(X);\psi''(Y)].\]
 \end{proof}
 
